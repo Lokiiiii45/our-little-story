@@ -55,7 +55,13 @@ function trackEvent(eventName) {
         .catch(error => console.log("Tracking error:", error));
 }
 
-trackEvent("Website Opened");
+checkOneTimeAccess().then(allowed => {
+
+    if (allowed) {
+        trackEvent("Website Opened");
+    }
+
+});
 
 function goToPage(pageNumber) {
 
