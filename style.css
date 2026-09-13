@@ -1,0 +1,1378 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #160b12;
+    color: #fff;
+    overflow: hidden;
+}
+
+button,
+select,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   COMMON PAGE
+========================================================= */
+
+.page {
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.page-content {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   COMMON TEXT
+========================================================= */
+
+.story-label {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #e9a8b9;
+    margin-bottom: 25px;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+}
+
+h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1.05;
+}
+
+h1 span,
+h2 span,
+h3 span {
+    color: #ff9eb5;
+}
+
+.intro,
+.story-text,
+.page3-intro,
+.page5-intro,
+.page4-message,
+.page7-message,
+.final-message,
+.date-message {
+    color: #d9c7ce;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   COMMON BUTTONS
+========================================================= */
+
+button {
+    border: none;
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.continue-btn,
+.start-btn,
+.restart-btn,
+.yes-date-btn,
+.maybe-date-btn,
+.confirm-date-btn {
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    margin-top: 28px;
+}
+
+.continue-btn span,
+.start-btn span {
+    margin-left: 8px;
+}
+
+
+/* =========================================================
+   PAGE 1
+========================================================= */
+
+.page1 {
+    background:
+        radial-gradient(circle at 50% 40%, #542034 0%, #29121d 45%, #12070d 100%);
+}
+
+.page1 .page-content {
+    animation: fadeUp 1.2s ease;
+}
+
+.small-text {
+    color: #dca3b4;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.page1 .intro {
+    max-width: 500px;
+    margin: 25px auto;
+    font-size: 17px;
+}
+
+.start-btn {
+    background: #ff7898;
+    color: white;
+    box-shadow: 0 10px 30px rgba(255, 100, 140, 0.3);
+}
+
+.start-btn:hover {
+    background: #ff91aa;
+    box-shadow: 0 15px 40px rgba(255, 100, 140, 0.45);
+}
+
+
+/* Floating hearts */
+
+.hearts span {
+    position: absolute;
+    color: #ff9eb5;
+    opacity: 0.35;
+    animation: floatHeart 7s infinite ease-in-out;
+}
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    font-size: 25px;
+}
+
+.hearts span:nth-child(2) {
+    left: 80%;
+    top: 15%;
+    font-size: 35px;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(3) {
+    left: 20%;
+    bottom: 15%;
+    font-size: 20px;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(4) {
+    right: 12%;
+    bottom: 20%;
+    font-size: 30px;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(5) {
+    left: 50%;
+    top: 10%;
+    font-size: 18px;
+    animation-delay: 4s;
+}
+
+
+/* =========================================================
+   PAGE 2
+========================================================= */
+
+.page2 {
+    background:
+        radial-gradient(circle at center, #4b1d31, #1d0b15 70%);
+}
+
+.page2-glow {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: rgba(255, 100, 150, 0.12);
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.page2-content {
+    animation: fadeUp 1s ease;
+}
+
+.heart-symbol {
+    font-size: 65px;
+    color: #ff7799;
+    margin-bottom: 20px;
+    animation: heartbeat 2s infinite;
+}
+
+.page2 h2 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.05;
+}
+
+.story-text {
+    max-width: 600px;
+    margin: 30px auto;
+    font-size: 17px;
+}
+
+.continue-btn {
+    background: rgba(255, 125, 155, 0.95);
+    color: white;
+    box-shadow: 0 10px 25px rgba(255, 80, 130, 0.25);
+}
+
+.continue-btn:hover {
+    background: #ff9eb5;
+}
+
+
+/* =========================================================
+   PAGE 3
+========================================================= */
+
+.page3 {
+    background:
+        linear-gradient(135deg, #21101a, #351827);
+}
+
+.page3-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(3px);
+    opacity: 0.4;
+}
+
+.circle-one {
+    width: 300px;
+    height: 300px;
+    background: #7d294d;
+    top: -100px;
+    left: -100px;
+}
+
+.circle-two {
+    width: 250px;
+    height: 250px;
+    background: #532238;
+    bottom: -100px;
+    right: -80px;
+}
+
+.page3-content {
+    animation: fadeUp 1s ease;
+}
+
+.page3 h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.05;
+}
+
+.page3-intro {
+    max-width: 600px;
+    margin: 20px auto 35px;
+}
+
+.memory-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.memory-card {
+    width: 250px;
+    min-height: 190px;
+    padding: 25px 20px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 180, 200, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.35s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.11);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.memory-icon {
+    font-size: 30px;
+    color: #ff91ad;
+    margin-bottom: 12px;
+}
+
+.memory-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+    color: #ffd7e1;
+}
+
+.memory-card p {
+    color: #cdbbc2;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   PAGE 4
+========================================================= */
+
+.page4 {
+    background:
+        radial-gradient(circle at center, #442033, #180b12 75%);
+}
+
+.page4-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(255, 92, 135, 0.1);
+    filter: blur(90px);
+}
+
+.page4-content {
+    animation: fadeUp 1s ease;
+}
+
+.big-heart {
+    font-size: 65px;
+    color: #ff7899;
+    animation: heartbeat 2s infinite;
+}
+
+.if-text {
+    color: #d99aaa;
+    letter-spacing: 2px;
+    margin: 15px 0;
+}
+
+.page4 h2 {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.08;
+}
+
+.message-line {
+    width: 80px;
+    height: 1px;
+    background: #bd7189;
+    margin: 30px auto;
+}
+
+.page4-message {
+    max-width: 550px;
+    margin: 15px auto;
+    font-size: 16px;
+}
+
+.second-message {
+    margin-top: 25px;
+}
+
+.second-message strong {
+    color: #ff9eb5;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   PAGE 5
+========================================================= */
+
+.page5 {
+    background:
+        linear-gradient(145deg, #1b0c14, #3a1929);
+}
+
+.page5-content {
+    animation: fadeUp 1s ease;
+}
+
+.page5 h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.05;
+}
+
+.page5-intro {
+    margin: 20px auto 30px;
+}
+
+
+/* =========================================================
+   PHOTO GRID
+========================================================= */
+
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   PHOTO CARDS
+========================================================= */
+
+.photo-card {
+    width: 230px;
+    height: 190px;
+
+    border-radius: 18px;
+    padding: 8px;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 180, 200, 0.15);
+
+    overflow: hidden;
+
+    transition: 0.35s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+
+/* =========================================================
+   PHOTOS
+========================================================= */
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Small zoom effect when hovering */
+
+.photo-card:hover img {
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .photo-grid {
+        gap: 15px;
+    }
+
+    .photo-card {
+        width: 180px;
+        height: 150px;
+    }
+
+}
+
+/* =========================================================
+   PAGE 6
+========================================================= */
+
+.page6 {
+    background:
+        radial-gradient(circle at center, #382033, #12080e 80%);
+}
+
+.page6-stars span {
+    position: absolute;
+    color: #f2b6c5;
+    opacity: 0.35;
+}
+
+.page6-stars span:nth-child(1) {
+    top: 15%;
+    left: 15%;
+}
+
+.page6-stars span:nth-child(2) {
+    top: 25%;
+    right: 15%;
+}
+
+.page6-stars span:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+}
+
+.page6-stars span:nth-child(4) {
+    bottom: 15%;
+    right: 20%;
+}
+
+.page6-content {
+    animation: fadeUp 1s ease;
+}
+
+.letter-card {
+    max-width: 650px;
+    margin: auto;
+
+    padding: 40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.10),
+            rgba(255,255,255,0.04)
+        );
+
+    border: 1px solid rgba(255, 180, 200, 0.18);
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.letter-heart {
+    font-size: 50px;
+    color: #ff91ad;
+    margin-bottom: 15px;
+}
+
+.letter-card h2 {
+    font-size: clamp(35px, 5vw, 55px);
+    line-height: 1.05;
+}
+
+.letter-line {
+    width: 70px;
+    height: 1px;
+    background: #c77991;
+    margin: 25px auto;
+}
+
+.letter-card p {
+    color: #d9c7ce;
+    line-height: 1.8;
+    margin: 16px auto;
+    max-width: 520px;
+}
+
+.letter-sign {
+    margin-top: 25px;
+    color: #d8a3b2;
+}
+
+.letter-sign strong {
+    display: block;
+    font-size: 28px;
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   PAGE 7
+========================================================= */
+
+.page7 {
+    background:
+        radial-gradient(circle at center, #432033, #160a11 80%);
+}
+
+.page7-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.25;
+}
+
+.orb-left {
+    width: 300px;
+    height: 300px;
+    background: #ff638b;
+    left: -120px;
+    top: 10%;
+}
+
+.orb-right {
+    width: 250px;
+    height: 250px;
+    background: #a64f70;
+    right: -100px;
+    bottom: 5%;
+}
+
+.page7-content {
+    animation: fadeUp 1s ease;
+}
+
+.question-mark {
+    font-size: 65px;
+    color: #ff91ad;
+    margin-bottom: 10px;
+}
+
+.page7-small {
+    color: #d79aaa;
+    letter-spacing: 1px;
+}
+
+.page7 h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.05;
+    margin-top: 15px;
+}
+
+.page7-line {
+    width: 80px;
+    height: 1px;
+    background: #c87a91;
+    margin: 28px auto;
+}
+
+.page7-message {
+    max-width: 550px;
+    margin: auto;
+}
+
+.page7-highlight {
+    color: #ff9eb5;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.final-heart {
+    font-size: 45px;
+    color: #ff7899;
+    margin: 18px 0;
+    animation: heartbeat 2s infinite;
+}
+
+.page7-final {
+    color: #d7c1c8;
+    line-height: 1.7;
+}
+
+.page7-final span {
+    display: block;
+}
+
+.page7-final strong {
+    color: #ff9eb5;
+    font-weight: 400;
+}
+
+.page7-button {
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   PAGE 8
+========================================================= */
+
+.page8 {
+    background:
+        radial-gradient(circle at center, #522239, #14070e 78%);
+}
+
+.page8-glow {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: rgba(255, 75, 125, 0.12);
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.page8-hearts span {
+    position: absolute;
+    color: #ff9bb3;
+    opacity: 0.3;
+}
+
+.page8-hearts span:nth-child(1) {
+    top: 15%;
+    left: 15%;
+    font-size: 28px;
+}
+
+.page8-hearts span:nth-child(2) {
+    top: 20%;
+    right: 15%;
+    font-size: 35px;
+}
+
+.page8-hearts span:nth-child(3) {
+    bottom: 20%;
+    left: 10%;
+}
+
+.page8-hearts span:nth-child(4) {
+    top: 30%;
+    left: 8%;
+}
+
+.page8-hearts span:nth-child(5) {
+    bottom: 15%;
+    right: 15%;
+    font-size: 35px;
+}
+
+.page8-hearts span:nth-child(6) {
+    bottom: 30%;
+    right: 8%;
+}
+
+.page8-content {
+    animation: fadeUp 1.2s ease;
+}
+
+.final-heart-big {
+    font-size: 75px;
+    color: #ff7196;
+    animation: heartbeat 2s infinite;
+}
+
+.final-intro {
+    color: #d99aaa;
+    margin-top: 10px;
+    letter-spacing: 2px;
+}
+
+.page8 h2 {
+    font-size: clamp(48px, 7vw, 80px);
+    line-height: 1;
+    margin-top: 15px;
+}
+
+.final-line {
+    width: 90px;
+    height: 1px;
+    background: #cb7890;
+    margin: 28px auto;
+}
+
+.final-message {
+    max-width: 550px;
+    margin: 16px auto;
+}
+
+.final-message span {
+    color: #ff9eb5;
+}
+
+.final-question {
+    margin-top: 28px;
+    color: #e0a0b1;
+}
+
+.page8 h3 {
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+.restart-btn {
+    background: #ff7898;
+    color: white;
+    box-shadow: 0 10px 30px rgba(255, 80, 130, 0.3);
+}
+
+.restart-btn span {
+    margin-right: 8px;
+}
+
+
+/* =========================================================
+   PAGE 9
+   DATE INVITATION
+========================================================= */
+
+.page9 {
+    min-height: 100vh;
+    height: auto;
+
+    display: none;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    background:
+        radial-gradient(circle at center top, #54233b, #1a0a12 75%);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 60px 0 100px;
+}
+
+.page9::-webkit-scrollbar {
+    width: 7px;
+}
+
+.page9::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.04);
+}
+
+.page9::-webkit-scrollbar-thumb {
+    background: rgba(255,145,170,0.45);
+    border-radius: 10px;
+}
+
+.page9-content {
+    width: 90%;
+    max-width: 750px;
+
+    min-height: 100vh;
+
+    padding: 20px 0 80px;
+
+    animation: fadeUp 1s ease;
+}
+
+.date-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 80, 130, 0.13);
+
+    filter: blur(100px);
+
+    top: 10%;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+.date-hearts span {
+    position: absolute;
+    color: #ff9bb3;
+    opacity: 0.3;
+}
+
+.date-hearts span:nth-child(1) {
+    top: 10%;
+    left: 10%;
+    font-size: 28px;
+}
+
+.date-hearts span:nth-child(2) {
+    top: 25%;
+    right: 12%;
+    font-size: 35px;
+}
+
+.date-hearts span:nth-child(3) {
+    bottom: 20%;
+    left: 12%;
+    font-size: 30px;
+}
+
+.date-hearts span:nth-child(4) {
+    bottom: 35%;
+    right: 10%;
+}
+
+.date-hearts span:nth-child(5) {
+    bottom: 10%;
+    right: 20%;
+    font-size: 25px;
+}
+
+.date-heart {
+    font-size: 70px;
+    color: #ff7197;
+
+    margin: 10px 0 15px;
+
+    animation: heartbeat 2s infinite;
+}
+
+.date-intro {
+    color: #d9a0b0;
+    letter-spacing: 1px;
+}
+
+.page9 h2 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.05;
+    margin-top: 15px;
+}
+
+.date-line {
+    width: 90px;
+    height: 1px;
+
+    background: #c87b92;
+
+    margin: 28px auto;
+}
+
+.date-message {
+    max-width: 550px;
+    margin: auto;
+
+    font-size: 16px;
+}
+
+.date-question {
+    margin-top: 30px;
+
+    color: #dba0b1;
+    font-size: 18px;
+}
+
+.page9 h3 {
+    font-size: clamp(24px, 4vw, 36px);
+
+    color: #ffe2e8;
+
+    margin-top: 10px;
+}
+
+.date-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+.yes-date-btn {
+    background: #ff7596;
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(255, 80, 130, 0.3);
+}
+
+.yes-date-btn:hover {
+    background: #ff91aa;
+}
+
+.maybe-date-btn {
+    background: rgba(255,255,255,0.08);
+
+    color: #ffd4df;
+
+    border: 1px solid rgba(255,180,200,0.2);
+}
+
+.maybe-date-btn:hover {
+    background: rgba(255,255,255,0.14);
+}
+
+#date-response {
+    margin: 25px auto 0;
+
+    color: #ffb0c3;
+
+    line-height: 1.8;
+
+    min-height: 30px;
+}
+
+
+/* =========================================================
+   DATE PICKER
+========================================================= */
+
+.date-picker {
+    display: none;
+
+    max-width: 600px;
+
+    margin: 30px auto 0;
+
+    padding: 30px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,180,200,0.18);
+
+    border-radius: 25px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.25);
+}
+
+.picker-title {
+    font-size: 21px;
+
+    color: #ffb3c5;
+
+    margin-bottom: 25px;
+}
+
+.picker-row {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.picker-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    min-width: 130px;
+}
+
+.picker-item label {
+    font-size: 13px;
+
+    color: #d6b4bf;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.picker-item select,
+.time-picker input {
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,180,200,0.2);
+
+    background: rgba(40,15,25,0.8);
+
+    color: #fff;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.picker-item select:focus,
+.time-picker input:focus {
+    border-color: #ff91ad;
+}
+
+.time-picker {
+    max-width: 180px;
+
+    margin: 20px auto 0;
+}
+
+.confirm-date-btn {
+    background: #ff7898;
+
+    color: white;
+
+    margin-top: 25px;
+
+    box-shadow:
+        0 10px 25px rgba(255,80,130,0.25);
+}
+
+#confirmed-date {
+    margin-top: 20px;
+
+    color: #ffb1c3;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.12);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+}
+
+
+/* =========================================================
+   LAPTOP / SMALL SCREEN
+========================================================= */
+
+@media (max-height: 800px) {
+
+    .page {
+        align-items: flex-start;
+        overflow-y: auto;
+        padding-top: 35px;
+        padding-bottom: 45px;
+    }
+
+    .page-content {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .page3-content,
+    .page5-content,
+    .page6-content,
+    .page7-content,
+    .page8-content {
+        transform: scale(0.92);
+    }
+
+    .memory-card {
+        min-height: 165px;
+    }
+
+    .photo-card {
+        height: 165px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 35px 0;
+        overflow-y: auto;
+    }
+
+    .page-content {
+        width: 88%;
+    }
+
+    .story-label {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+    }
+
+    .intro,
+    .story-text,
+    .page3-intro,
+    .page5-intro,
+    .page4-message,
+    .page7-message,
+    .final-message,
+    .date-message {
+        font-size: 14px;
+    }
+
+
+    /* Page 3 */
+
+    .memory-container {
+        gap: 12px;
+    }
+
+    .memory-card {
+        width: 100%;
+        max-width: 330px;
+        min-height: auto;
+        padding: 20px;
+    }
+
+
+    /* Page 5 */
+
+    .photo-grid {
+        gap: 12px;
+    }
+
+    .photo-card {
+        width: 100%;
+        max-width: 320px;
+        height: 170px;
+    }
+
+
+    /* Page 6 */
+
+    .letter-card {
+        padding: 28px 20px;
+    }
+
+
+    /* Page 9 */
+
+    .page9 {
+        padding-top: 40px;
+        padding-bottom: 80px;
+    }
+
+    .page9-content {
+        min-height: auto;
+    }
+
+    .date-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .yes-date-btn,
+    .maybe-date-btn {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .date-picker {
+        padding: 25px 18px;
+    }
+
+    .picker-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .picker-item {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .time-picker {
+        width: 100%;
+        max-width: 250px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .page2 h2,
+    .page3 h2,
+    .page4 h2,
+    .page5 h2,
+    .page7 h2,
+    .page8 h2,
+    .page9 h2 {
+        font-size: 38px;
+    }
+
+    .continue-btn,
+    .start-btn,
+    .restart-btn {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+
+}
