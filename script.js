@@ -1,22 +1,26 @@
 /* =========================
    PAGE NAVIGATION
 ========================= */
+
 const TRACKER_URL = "https://script.google.com/macros/s/AKfycbwEFAvkXebIOf0pI9T_NY0TOkfHdrVFlWgt44vzRgk9jrPc80pgs0bl0QrhbXgw_aEs/exec";
-// =========================
-// ONE-TIME ACCESS CHECK
-// =========================
+
+
+/* =========================
+   ONE-TIME ACCESS CHECK
+   TEST MODE
+========================= */
 
 async function checkOneTimeAccess() {
 
     try {
 
         const response = await fetch(
-            `${TRACKER_URL}?event=CHECK_ACCESS`
+            `${TRACKER_URL}?event=CHECK_ACCESS&mode=TEST`
         );
 
         const result = await response.text();
 
-        if (result.trim() !== "AVAILABLE") {
+        if (result.trim() !== "TEST_AVAILABLE") {
 
             document.body.innerHTML = `
                 <div style="
@@ -30,11 +34,23 @@ async function checkOneTimeAccess() {
                     background:#fff0f5;
                     color:#333;
                 ">
+
                     <div>
-                        <div style="font-size:60px;">❤️</div>
-                        <h1>This little story has already been opened.</h1>
-                        <p>Some stories are meant to be read only once. 🌹</p>
+
+                        <div style="font-size:60px;">
+                            ❤️
+                        </div>
+
+                        <h1>
+                            This little story has already been opened.
+                        </h1>
+
+                        <p>
+                            Some stories are meant to be read only once. 🌹
+                        </p>
+
                     </div>
+
                 </div>
             `;
 
@@ -50,34 +66,67 @@ async function checkOneTimeAccess() {
         return false;
     }
 }
+
+
+/* =========================
+   TRACKING
+========================= */
+
 function trackEvent(eventName) {
-    fetch(`${TRACKER_URL}?event=${encodeURIComponent(eventName)}`)
-        .catch(error => console.log("Tracking error:", error));
+
+    fetch(
+        `${TRACKER_URL}?event=${encodeURIComponent(eventName)}`
+    )
+    .catch(error =>
+        console.log("Tracking error:", error)
+    );
+
 }
+
+
+/* =========================
+   START ACCESS CHECK
+========================= */
 
 checkOneTimeAccess().then(allowed => {
 
     if (allowed) {
+
         trackEvent("Website Opened");
+
     }
 
 });
 
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
 function goToPage(pageNumber) {
 
-    // Hide every page
     document.querySelectorAll(".page").forEach(page => {
+
         page.style.display = "none";
+
     });
 
-    // Find selected page
-    const selectedPage = document.getElementById(
-        "page" + pageNumber
-    );
 
-    // Show selected page
+    const selectedPage =
+        document.getElementById("page" + pageNumber);
+
+
     if (selectedPage) {
+
         selectedPage.style.display = "flex";
+
+
+        if (pageNumber === 9) {
+
+            selectedPage.scrollTop = 0;
+
+        }
+
     }
 
 }
@@ -159,6 +208,7 @@ function confirmDate() {
 
 
     // Check whether everything is selected
+
     if (!day || !month || !year || !time) {
 
         result.innerHTML =
@@ -167,9 +217,15 @@ function confirmDate() {
         return;
 
     }
-trackEvent(`Date Selected: ${day} ${month} ${year} at ${time}`);
+
+
+    trackEvent(
+        `Date Selected: ${day} ${month} ${year} at ${time}`
+    );
+
 
     // Show final confirmation
+
     result.innerHTML =
         `It's a date! ❤️<br><br>
         📅 ${day} ${month} ${year}<br>
@@ -183,27 +239,11 @@ trackEvent(`Date Selected: ${day} ${month} ${year} at ${time}`);
    START WEBSITE
 ========================= */
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-    // Always start from Page 1
-    goToPage(1);
+        goToPage(1);
 
-});
-function goToPage(pageNumber) {
-
-    document.querySelectorAll(".page").forEach(page => {
-        page.style.display = "none";
-    });
-
-    const selectedPage = document.getElementById(
-        "page" + pageNumber
-    );
-
-    if (selectedPage) {
-        selectedPage.style.display = "flex";
-
-        if (pageNumber === 9) {
-            selectedPage.scrollTop = 0;
-        }
     }
-}
+);
