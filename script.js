@@ -15,7 +15,7 @@ async function checkOneTimeAccess() {
     try {
 
         const response = await fetch(
-            `${TRACKER_URL}?event=CHECK_ACCESS&mode=TEST`
+            `${TRACKER_URL}?event=CHECK_ACCESS&mode=FINAL`
         );
 
         const result = await response.text();
