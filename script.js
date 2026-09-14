@@ -4,7 +4,67 @@
 
 const TRACKER_URL = "https://script.google.com/macros/s/AKfycbwEFAvkXebIOf0pI9T_NY0TOkfHdrVFlWgt44vzRgk9jrPc80pgs0bl0QrhbXgw_aEs/exec";
 
+/* =========================
+   ONE-TIME ACCESS CHECK
+   FINAL MODE
+========================= */
 
+async function checkOneTimeAccess() {
+
+    try {
+
+        const response = await fetch(
+            `${TRACKER_URL}?event=CHECK_ACCESS&mode=FINAL`
+        );
+
+        const result = await response.text();
+
+        if (result.trim() !== "AVAILABLE") {
+
+            document.body.innerHTML = `
+                <div style="
+                    min-height:100vh;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    text-align:center;
+                    padding:30px;
+                    font-family:Arial,sans-serif;
+                    background:#fff0f5;
+                    color:#333;
+                ">
+
+                    <div>
+
+                        <div style="font-size:60px;">
+                            ❤️
+                        </div>
+
+                        <h1>
+                            This little story has already been opened.
+                        </h1>
+
+                        <p>
+                            Some stories are meant to be read only once. 🌹
+                        </p>
+
+                    </div>
+
+                </div>
+            `;
+
+            return false;
+        }
+
+        return true;
+
+    } catch (error) {
+
+        console.log("Access check error:", error);
+
+        return false;
+    }
+}
 
 
 /* =========================
